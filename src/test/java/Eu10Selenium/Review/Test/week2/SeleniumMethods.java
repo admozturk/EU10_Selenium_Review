@@ -23,8 +23,28 @@ public class SeleniumMethods {
 
         driver.navigate().refresh(); // cydeo
 
+        driver.navigate().to("https://www.ebay.com");
 
+        System.out.println(driver.getTitle()); // returns string
 
+        System.out.println(driver.getCurrentUrl()); // gets url of the page and returns String
+
+        driver.navigate().to("https://www.abc.com");
+
+        String actualTitle = driver.getTitle();
+       if (actualTitle.equals("ABC Home Page - ABC.com")){
+           System.out.println("Verification PASSED!");
+       }else{
+           System.out.println("Verification FAILED!!!");
+       }
+
+        String actualUrl = driver.getCurrentUrl();
+        if (actualUrl.equals("https://abc.com/")){
+            System.out.println("Verification PASSED!");
+        }else{
+            System.out.println("Verification FAILED!!!");
+        }
+        driver.close();
 
 
     }
